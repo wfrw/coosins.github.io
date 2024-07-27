@@ -52,11 +52,11 @@
             padding: 10px 20px;
             font-size: 16px;
             color: #ffffff;
-            background-color: rgb(98, 0, 234);
+            background-color: #6200ea;
             border: none;
             border-radius: 5px;
             text-decoration: none;
-            cursor: pointer;
+            cursor: none;
             transition: background-color 0.3s;
         }
         .button:hover {
@@ -70,20 +70,14 @@
             z-index: 1;
         }
         .nav-link {
-            color: #ffffff;
-            text-decoration: none;
-            margin-right: 10px;
-        }
-        .nav-link {
             -webkit-text-fill-color: rgba(255, 255, 255, 1); /* Default color white */
-            transition: -webkit-text-fill-color 1s ease, text-decoration 0.5s ease; /* Transition for color and decoration */
+            transition: font-weight 1s ease;
             text-decoration: none; /* Default text decoration */
         }
 
         /* Hover state with fading effect */
         .nav-link:hover {
-            -webkit-text-fill-color: rgba(98, 0, 234, 1); /* Color when hovered (purple) */
-            text-decoration: bold; /* Text decoration when hovered */
+            font-weight: bold;
         }
         span {
             position: absolute;
@@ -182,9 +176,14 @@
             animation-duration: 2.75s;
         }
     </style>
+
+    
 </head>
 <body>
     <section></section>
+    <link rel="stylesheet" href="styles/index.processed.css">
+    <div id="mouse" class="mouse"></div>
+    <script src="scripts/index.js" type="text/javascript"></script>
     <div class="container">
         <h1>Coosins Modded</h1>
         <a href="https://github.com/wfrw/coosins-modded/raw/main/Coosins%20modded-1.1.0%20(newest).zip" class="button">Download</a>

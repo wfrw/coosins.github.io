@@ -1,0 +1,54 @@
+/**
+ * index.scss
+ * - Add any styles you want here!
+ */
+html {
+  cursor: none;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+}
+
+nav ul {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  padding: 10px;
+  z-index: 99;
+}
+
+.mouse {
+  position: absolute;
+  z-index: 9999;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #6200ea;
+  border: 1px solid #000000;
+  pointer-events: none;
+  backdrop-filter: sepia(90%);
+  transform: translate(-50%, -50%);
+  transition: transform .5s ease-out;
+}
+
+.zoom {
+  transform: scale(2);
+  transform-origin: 100% 100%;
+}
+
+.hovered {
+  color: white;
+}

@@ -1,0 +1,49 @@
+/**
+ * index.scss
+ * - Add any styles you want here!
+ */
+html {
+  cursor: none;
+}
+body {
+  background: #000000;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  ul {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-type: none;
+      padding: 10px;
+      z-index: 99;
+    }
+  }
+}
+
+.mouse {
+  position: absolute;
+  padding: 20px;
+  border-radius: 50%;
+  background-color: #000;
+  border: 1px solid #000;
+  pointer-events: none;
+  backdrop-filter: sepia(90%);
+  transform: translate(-50%, -50%);
+  transition: transform .5s ease-out
+}
+
+.zoom {
+  transform: scale(2);
+  transform-origin: 100% 100%;
+}
+
+.hovered {
+  color: white;
+}
