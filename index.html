@@ -17,6 +17,10 @@
             background-color: #000; /* Black background */
             color: #ffffff; /* White text color for visibility */
             font-family: Arial, sans-serif;
+            user-select: none; /* Standard syntax */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
         }
         section {
             position: absolute;
@@ -180,6 +184,12 @@
     
 </head>
 <body>
+    <script>
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+    </script>
     <section></section>
     <link rel="stylesheet" href="styles/index.processed.css">
     <div id="mouse" class="mouse"></div>

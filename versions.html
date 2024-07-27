@@ -20,6 +20,10 @@
             justify-content: center;
             height: 100vh;
             overflow: hidden;
+            user-select: none; /* Standard syntax */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
         }
         .container {
             text-align: center;
@@ -169,6 +173,12 @@
     </style>
 </head>
 <body>
+    <script>
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+    </script>
     <div class="container">
         <h1>Versions of Coosins Modded</h1>
         <ul class="version-list">

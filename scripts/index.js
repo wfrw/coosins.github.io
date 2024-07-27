@@ -1,6 +1,10 @@
 var mouse = document.querySelector(".mouse");
 
-document.addEventListener("mousemove", function(e) {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+document.addEventListener("mousemove", async function(e) {
   document.getElementById("mouse").style.top = e.pageY + "px";
   document.getElementById("mouse").style.left = e.pageX + "px";
 });
