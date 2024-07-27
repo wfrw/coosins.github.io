@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #121212;
+            background-color: #000000; /* Black background */
             color: #ffffff;
             margin: 0;
             padding: 0;
@@ -16,9 +16,14 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            overflow: hidden;
         }
         .container {
             text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
         .version-list {
             margin-top: 20px;
@@ -30,27 +35,130 @@
         }
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
+            width: 200px; /* Set fixed width for buttons */
+            padding: 10px 0; /* Adjust padding to fit width */
             font-size: 16px;
             color: #ffffff;
-            background-color: #6200ea;
+            background-color: #6200ea; /* Button color */
             border: none;
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
             transition: background-color 0.3s;
+            text-align: center; /* Center text within button */
         }
         .button:hover {
-            background-color: #3700b3;
+            background-color: #3700b3; /* Hover color */
+        }
+        .nav-container {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 1;
         }
         .nav-link {
-            margin: 10px;
             color: #ffffff;
             text-decoration: none;
+            margin-right: 10px;
         }
         .nav-link:hover {
             text-decoration: underline;
+        }
+        span {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #6200ea; /* Match the button color */
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(98, 0, 234, 0.1), 0 0 0 8px rgba(98, 0, 234, 0.1), 0 0 20px rgba(98, 0, 234, 0.1);
+            animation: animate 3s linear infinite;
+            cursor: pointer; /* Make stars clickable */
+        }
+        span.explode {
+            animation: explode 0.5s forwards; /* Add explosion effect */
+        }
+        @keyframes animate {
+            0% {
+                transform: rotate(315deg) translateX(0);
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(315deg) translateX(-1000px);
+                opacity: 0;
+            }
+        }
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        span:nth-child(1) {
+            top: 0;
+            right: 0;
+            animation-delay: 0s;
+            animation-duration: 1s;
+        }
+        span:nth-child(2) {
+            top: 0;
+            right: 80px;
+            animation-delay: 0.2s;
+            animation-duration: 3s;
+        }
+        span:nth-child(3) {
+            top: 80px;
+            right: 0px;
+            animation-delay: 0.4s;
+            animation-duration: 2s;
+        }
+        span:nth-child(4) {
+            top: 0;
+            right: 180px;
+            animation-delay: 0.6s;
+            animation-duration: 1.5s;
+        }
+        span:nth-child(5) {
+            top: 0;
+            right: 400px;
+            animation-delay: 0.8s;
+            animation-duration: 2.5s;
+        }
+        span:nth-child(6) {
+            top: 0;
+            right: 600px;
+            animation-delay: 1s;
+            animation-duration: 3s;
+        }
+        span:nth-child(7) {
+            top: 300px;
+            right: 0px;
+            animation-delay: 1.2s;
+            animation-duration: 1.75s;
+        }
+        span:nth-child(8) {
+            top: 0px;
+            right: 700px;
+            animation-delay: 1.4s;
+            animation-duration: 1.25s;
+        }
+        span:nth-child(9) {
+            top: 0px;
+            right: 1000px;
+            animation-delay: 0.75s;
+            animation-duration: 2.25s;
+        }
+        span:nth-child(10) {
+            top: 0px;
+            right: 450px;
+            animation-delay: 2.75s;
+            animation-duration: 2.75s;
         }
     </style>
 </head>
@@ -58,14 +166,33 @@
     <div class="container">
         <h1>Versions of Coosins Modded</h1>
         <ul class="version-list">
-            <li>Version 1.0 - <a href="download/coosins_modded_v1.0.zip" class="button">Download</a></li>
-            <li>Version 1.1 - <a href="download/coosins_modded_v1.1.zip" class="button">Download</a></li>
-            <li>Version 1.2 - <a href="download/coosins_modded_v1.2.zip" class="button">Download</a></li>
+            <li>Version 1.0.0 - <a href="https://github.com/wfrw/coosins-modded/raw/main/Coosins%20modded-1.0.0%20(deprecated).zip" class="button">Download (deprecated)</a></li>
+            <li>Version 1.1.0 - <a href="https://github.com/wfrw/coosins-modded/raw/main/Coosins%20modded-1.1.0%20(newest).zip" class="button">Download (newest)</a></li>
         </ul>
-        <div>
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="versions.html" class="nav-link">Versions</a>
-        </div>
     </div>
+    <div class="nav-container">
+        <a href="index.html" class="nav-link">Home</a>
+    </div>
+    <!-- Shooting Stars -->
+    <span onclick="explode(this)"></span>
+    <span onclick="explode(this)"></span>
+    <span onclick="explode(this)"></span>
+    <span onclick="explode(this)"></span>
+    <span onclick="explode(this)"></span>
+    <span onclick="explode(this)"></span>
+    <span onclick="explode(this)"></span>
+    <span onclick="explode(this)"></span>
+    <span onclick="explode(this)"></span>
+    <span onclick="explode(this)"></span>
+
+    <script>
+        function explode(element) {
+            element.classList.add('explode');
+            // Remove the star element after the explosion animation ends
+            setTimeout(() => {
+                element.remove();
+            }, 500); // Match the duration of the explosion animation
+        }
+    </script>
 </body>
 </html>
